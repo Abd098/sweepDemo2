@@ -4,6 +4,10 @@
 }
 
 #toDate {
+  /* Original styles restored */
+}
+
+.toDateStyle {
   /* Apply styles to the date */
   font-weight: bold;
   color: green;
