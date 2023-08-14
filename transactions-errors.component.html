@@ -1,0 +1,160 @@
+<div class="row">
+  <div class="col-md-12">
+    <div>
+      <label for="fromDate1">From:</label>
+      <input style="color: red; font-size: 14px; background-color: yellow;" type="date" id="fromDate1" [(ngModel)]="fromDate1" />
+      <label for="toDate1">To:</label>
+      <input type="date" id="toDate" [(ngModel)]="toDate1" />
+          <label for="operator">Operator:</label>
+          <select id="operator" [(ngModel)]="selectedOperator1">
+            <option value="" selected disabled>Select a vendor</option>
+            <option *ngFor="let operator of originalDataOperators" [value]="operator.operatorID">
+
+              {{ operator.operatorSkuName }}
+
+            </option>
+          </select>
+
+      <button class="btn btn-primary" (click)="applyPurchaseTransactionErrors()">
+        Apply Purchase Transaction Errors
+      </button>
+      <!-- <app-search-bar (search)="handleSearchTransactionErrors($event)"></app-search-bar> -->
+      <br><br>
+      <button class="btn btn-primary" (click)="generateExcelSheetForTransactionErrors()">
+        Generate Excel Sheet
+      </button>
+
+    </div>
+      <div class="card">
+        <div class="card-header">
+          <h5 class="card-title">Purchase Transaction errors</h5>
+          <p class="card-category">24 Hours Ago</p>
+        </div>
+        <div class="card-body">
+          <!-- <div class="table-responsive"> -->
+          <table class="table">
+            <thead class="text-primary">
+              <th>operatorID</th>
+              <th>counter</th>
+              <th>transactionStatusDesc</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of purchaseErrors">
+                <td>{{ item.operatorID }}</td>
+                <td>{{ item.counter }}</td>
+                <td>{{ item.transactionStatusDesc }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="card-footer"> -->
+        <!-- <hr /> -->
+        <!-- <div class="stats">
+              <i class="fa fa-history"></i> Updated 3 minutes ago
+            </div> -->
+        <!-- </div> -->
+
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+          <label for="fromDate2">From:</label>
+          <input type="date" id="fromDate2" [(ngModel)]="fromDate2" />
+          <label for="toDate2">To:</label>
+          <input type="date" id="toDate" [(ngModel)]="toDate2" />
+          <label for="operator">Operator:</label>
+          <select id="operator" [(ngModel)]="selectedOperator2">
+            <option *ngFor="let operator of originalDataOperators" [value]="operator.operatorID">
+
+              {{ operator.operatorSkuName }}
+
+            </option>
+          </select>
+
+          <button class="btn btn-primary" (click)="applyCardsErrors()">Apply Cards Errors</button>
+          <!-- <app-search-bar (search)="handleSearch($event)"></app-search-bar> -->
+
+          <br><br>
+          <button class="btn btn-primary" (click)="generateExcelSheetForCardsErrors()">
+            Generate Excel Sheet
+          </button>
+
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">Cards Errors</h5>
+            <p class="card-category">24 Hours Ago</p>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead class="text-primary">
+                <th>operatorID</th>
+                <th>counter</th>
+                <th>transactionStatusDesc</th>
+                <th>denomID</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of cardsErrors">
+                  <td>{{ item.operatorID }}</td>
+                  <td>{{ item.counter }}</td>
+                  <td>{{ item.transactionStatusDesc }}</td>
+                  <td>{{ item.denomID }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div>
+          <label for="fromDate3">From:</label>
+          <input type="date" id="fromDate3" [(ngModel)]="fromDate3" />
+          <label for="toDate3">To:</label>
+          <input type="date" id="toDate" [(ngModel)]="toDate3" />
+          <label for="operator">Operator:</label>
+          <select id="operator" [(ngModel)]="selectedOperator3">
+            <option *ngFor="let operator of originalDataOperators" [value]="operator.operatorID">
+
+              {{ operator.operatorSkuName }}
+
+            </option>
+          </select>
+
+          <button class="btn btn-primary" (click)="applyUserTransactions()">
+            Apply User Transactions
+          </button>
+          <!-- <app-search-bar (search)="handleSearch($event)"></app-search-bar> -->
+          <br><br>
+          <button class="btn btn-primary" (click)="generateExcelSheetForUserTransactionErrors()">
+            Generate Excel Sheet
+          </button>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <h5 class="card-title">User Transactions</h5>
+            <p class="card-category">24 Hours Ago</p>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead class="text-primary">
+                <th>operatorID</th>
+                <th>counter</th>
+                <th>transactionStatusDesc</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of transactionErrors">
+                  <td>{{ item.operatorID }}</td>
+                  <td>{{ item.counter }}</td>
+                  <td>{{ item.transactionStatusDesc }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
