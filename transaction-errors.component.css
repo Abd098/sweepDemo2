@@ -1,6 +1,23 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 #toDate {
   /* Apply styles to the date */
   font-weight: bold;
   color: green;
   /* Add more styles as desired */
+}
+
+input, select {
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  input, select {
+    font-size: 14px;
+  }
 }
